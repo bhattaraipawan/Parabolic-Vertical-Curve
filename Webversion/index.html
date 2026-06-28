@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parabolic Vertical Curve · Pawan Bhattarai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <h1>Parabolic Vertical Curve</h1>
+    <a href="https://bhattaraipawan.github.io/">&larr; Back to portfolio</a>
+  </div>
+
+  <main class="app-stage">
+    <div class="tool">
+      <p class="lead">Equal-tangent vertical curve connecting two grades. Adjust the grades, length and PVI &mdash; the profile, the high/low point and all stations update live.</p>
+
+      <div class="grid">
+        <div class="canvas-box">
+          <canvas id="cv" width="760" height="460"></canvas>
+        </div>
+
+        <div class="side">
+          <div class="controls">
+            <div class="ctrl">
+              <label for="g1">Grade in&nbsp;g&#8321;</label>
+              <div class="num"><input id="g1" type="number" min="-15" max="15" step="0.1" value="3"><span class="unit">%</span></div>
+            </div>
+            <div class="ctrl">
+              <label for="g2">Grade out&nbsp;g&#8322;</label>
+              <div class="num"><input id="g2" type="number" min="-15" max="15" step="0.1" value="-2"><span class="unit">%</span></div>
+            </div>
+            <div class="ctrl">
+              <label for="L">Length&nbsp;L</label>
+              <div class="num"><input id="L" type="number" min="1" step="20" value="400"><span class="unit">ft</span></div>
+            </div>
+            <div class="ctrl">
+              <label for="PVI">PVI station</label>
+              <div class="num"><input id="PVI" type="number" min="0" step="1" value="5000"><span class="unit">ft</span></div>
+            </div>
+            <div class="ctrl">
+              <label for="EL">PVI elevation</label>
+              <div class="num"><input id="EL" type="number" step="0.1" value="100"><span class="unit">ft</span></div>
+            </div>
+          </div>
+
+          <table class="out">
+            <tbody>
+              <tr><th>Algebraic diff, A</th><td id="oA">&mdash;</td></tr>
+              <tr><th>K value (L/|A|)</th><td id="oK">&mdash;</td></tr>
+              <tr class="sta"><th>PVC station</th><td id="oPVCs">&mdash;</td></tr>
+              <tr><th>PVC elevation</th><td id="oPVCe">&mdash;</td></tr>
+              <tr class="sta"><th>PVT station</th><td id="oPVTs">&mdash;</td></tr>
+              <tr><th>PVT elevation</th><td id="oPVTe">&mdash;</td></tr>
+              <tr class="hi"><th id="hlLabel">High point</th><td id="oHL">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
